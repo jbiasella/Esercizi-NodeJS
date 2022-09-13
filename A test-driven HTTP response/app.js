@@ -1,16 +1,14 @@
-const {createServer} = require ("node:http")
+const { createServer } = require("node:http"); 
 
-const createApp = () => {
+function createApp(){
+    return createServer((request, response)=>{
 
-  return createServer((request,response) => {
+        response.statusCode = 200;
 
-   response.statusCode = 200;
+        response.setHeader("Content-Type", "text/html"); 
 
-   response.setHeader("Content-Type", "text/html")
-
-   response.end("<html><body><h1>Welcome to the World Wide Web! </h1></body></html>")
-  })
-
+        response.end( "<html><h1>Welcome to World Wide Web!</h1></html>");
+    })
 }
 
-module.exports = createApp
+module.exports = createApp; 
